@@ -10,7 +10,16 @@ export const QUERY_USER = gql`
 `;
 
 export const QUERY_DRINKS = gql`
-  query getDrinks
+  query getDrinks { 
+    drinks {
+      _id
+      drinkText
+      createdAt
+      isAlcoholic
+      haveMade
+      comments
+    }
+  }
 `
 
 export const QUERY_SINGLE_DRINK = gql`
@@ -18,6 +27,27 @@ export const QUERY_SINGLE_DRINK = gql`
     drink(_id: $_id) {
       _id
       comments
+      drinkText
+      isAlcoholic
+      haveMade
+    }
+  }
+`;
+
+
+export const QUERY_ME = gql`
+  query me {
+    me {
+      _id
+      username
+      email
+      drinks {
+        _id
+        drinkText
+        createdAt
+        isAlcoholic
+        haveMade
+      }
     }
   }
 `;

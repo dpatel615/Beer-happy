@@ -20,10 +20,10 @@ const userSchema = new Schema({
     minlength: 5,
   },
   //create a Drinks.js model to be included 
-  drinks: [
+  drink: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Thought',
+      ref: 'Drink',
     },
   ],
 });
