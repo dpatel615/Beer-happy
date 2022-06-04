@@ -42,3 +42,5 @@ type Mutation {
     removeComment(drinkId: ID!, commentId: ID!): Drink
 }
 `
+
+module.exports = typeDefs;
