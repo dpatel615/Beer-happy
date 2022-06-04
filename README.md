@@ -10,7 +10,7 @@
 - [User Story](#user-story)
 - [Acceptance Criteria](#acceptance-criteria)
 - [Inspiration](#inspiration)
-- [Author](#author)
+- [Author](#authors)
 - [Status](#status)
 - [License](#license)
 
