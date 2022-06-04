@@ -18,6 +18,10 @@ const drinkSchema = new Schema({
     comments: {
         type: String,
         required: false, 
+    },
+    drinkText: {
+        type: String,
+        required: true, 
     }
 });
 
