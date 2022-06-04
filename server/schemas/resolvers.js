@@ -68,22 +68,21 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-    // removeThought: async (parent, { thoughtId }, context) => {
-    //   if (context.user) {
-    //     const thought = await Thought.findOneAndDelete({
-    //       _id: thoughtId,
-    //       thoughtAuthor: context.user.username,
-    //     });
+    removeDrink: async (parent, { drinkId }, context) => {
+      if (context.user) {
+        const drink = await Drink.findOneAndDelete({
+          _id: DrinkId,
+        });
 
-    //     await User.findOneAndUpdate(
-    //       { _id: context.user._id },
-    //       { $pull: { thoughts: thought._id } }
-    //     );
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { thought: drink._id } }
+        );
 
-    //     return thought;
-    //   }
-    //   throw new AuthenticationError('You need to be logged in!');
-    // },
+        return drink;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
     removeComment: async (parent, { drinkId, commentId }, context) => {
       if (context.user) {
         return Drink.findOneAndUpdate(
