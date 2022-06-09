@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url("./Assets/Screen\ Shot\ 2022-06-08\ at\ 11.31.59\ AM.png");  
+ background-repeat: no-repeat;
+ background-size: cover;
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.content {
+  padding: 20px;
+}
+
+.header {
+  padding: 40px;
+  background: black;
+  border-bottom: 1px solid #999;
+}
+.header a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  margin-left: 5px;
+  font-size: 2em;
+}
+.header a:hover {
+  color: whitesmoke;
+}
+.header small {
+  color: orchid;
+}
+.header .active {
+  color: #2c7613;
+}
+.home {
+  color: azure;
+  font-size: 64px;
+  align-items: center;
+  text-align: center;
+  text-decoration: overline;
+  
+}

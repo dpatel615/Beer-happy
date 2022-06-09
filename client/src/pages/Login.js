@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
@@ -7,9 +7,25 @@ import { QUERY_USER, QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth';
 
 
-const Profile = () => {
+const Login = () => {
     const { username: userParam } = useParams();
-  
+    const username = useFormInput('');
+    const password = useFormInput('');
+    const [error, setError] = useState(null);
+    
+    // handle button click of login form
+    const handleLogin = () => {
+      setError(null);
+      // axios.post('http://localhost:4000/users/signin', { username: username.value, password: password.value }).then(response => {
+      //   setLoading(false);
+      //   setUserSession(response.data.token, response.data.user);
+      //   props.history.push('/dashboard');
+      // }).catch(error => {
+      //   setLoading(false);
+      //   if (error.response.status === 401) setError(error.response.data.message);
+      //   else setError("Something went wrong. Please try again later.");
+      // });
+    }
     const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
       variables: { username: userParam },
     });
@@ -34,36 +50,34 @@ const Profile = () => {
     }
   
     return (
-        {/**
       <div>
-    //     <div className="flex-row justify-center mb-3">
-    //       <h2 className="col-12 col-md-10 bg-dark text-light p-3 mb-5">
-    //         Viewing {userParam ? `${user.username}'s` : 'your'} profile.
-    //       </h2>
-  
-    //       <div className="col-12 col-md-10 mb-5">
-    //         <ThoughtList
-    //           thoughts={user.thoughts}
-    //           title={`${user.username}'s thoughts...`}
-    //           showTitle={false}
-    //           showUsername={false}
-    //         />
-    //       </div>
-    //       {!userParam && (
-    //         <div
-    //           className="col-12 col-md-10 mb-3 p-3"
-    //           style={{ border: '1px dotted #1a1a1a' }}
-    //         >
-    //           <ThoughtForm />
-    //         </div>
-    //       )}
-    //     </div>
-    //   </div>
-     );
-//   };
-   */}
-    )
+      Login<br /><br />
+      <div style={{color: "white"}}>
+        Username<br />
+        <input type="text" {...username} autoComplete="new-password" />
+      </div>
+      <div style={{ color:"white", marginTop: 10 }}>
+        Password<br />
+        <input type="password" {...password} autoComplete="new-password" />
+      </div>
+      {error && <><small style={{ color: 'red' }}>{error}</small><br /></>}<br />
+      <input type="button" value={loading ? 'Loading...' : 'Login'} onClick={handleLogin} disabled={loading} /><br />
+    </div>
+        
+     
+   
+    );
 }
-    
+const useFormInput = initialValue => {
+  const [value, setValue] = useState(initialValue);
 
-  export default Profile;
+  const handleChange = e => {
+    setValue(e.target.value);
+  }
+  return {
+    value,
+    onChange: handleChange
+  }
+}
+
+  export default Login;
