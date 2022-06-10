@@ -1,7 +1,7 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
-import PrivateRoute from './utils/PrivateRoute';
-import PublicRoute from './utils/PublicRoute';
+import { Routes, Route, Router } from 'react-router-dom';
+// import PrivateRoute from './utils/PrivateRoute';
+// import PublicRoute from './utils/PublicRoute';
 import {
   ApolloClient,
   InMemoryCache,
@@ -13,7 +13,7 @@ import { setContext } from '@apollo/client/link/context';
 
 //IMPORT PAGES NEXT
 import Home from './pages/Home';
-import Signup from './pages/Signup';
+// import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
@@ -48,24 +48,54 @@ const client = new ApolloClient({
 
   function App() {
       return (
-        <div className="App">
-      <BrowserRouter>
-        <div>
-          <div className="header">
-            <NavLink exact activeClassName="active" to="/">Home</NavLink>
-            <NavLink activeClassName="active" to="/login">Login</NavLink><small></small>
-            <NavLink activeClassName="active" to="/dashboard">Dashboard</NavLink><small></small>
-          </div>
-          <div className="content">
+        <ApolloProvider client={client}>
+          <Router>
+          <div className="flex-column justify-flex-start min-100-vh">
+          <Header />
+          <div className="container">
             <Routes>
-              <Route exact path="/" element={<Home/>} />
-              <Route path="/login" component={Login} />
-              <Route path="/dashboard" component={Dashboard} />
-            </Routes>
+              <Route 
+                path="/"
+                element={<Home />}
+              />
+              <Route 
+                path="/login" 
+                element={<Login />}
+              />
+              <Route 
+                path="/Dashboard" 
+                element={<Dashboard />}
+              />
+              <Route 
+                path="/Profile" 
+                element={<Profile />}
+              />
+               </Routes>
           </div>
+          <Footer />
         </div>
-      </BrowserRouter>
-    </div>
+          </Router>
+        </ApolloProvider>
+      //   <div className="App">
+      // <BrowserRouter>
+      //   <div>
+      //     {/* <div className="header">
+      //       <NavLink exact activeClassName="active" to="/">Home</NavLink>
+      //       <NavLink activeClassName="active" to="/login">Login</NavLink><small></small>
+      //       <NavLink activeClassName="active" to="/dashboard">Dashboard</NavLink><small></small>
+      //     </div> */}
+
+      //     <div className="content">
+      //       <Routes>
+      //         <Route exact path="/" element={<Home/>} />
+      //         <Route path="/login" component={Login} />
+      //         <Route path="/dashboard" component={Dashboard} />
+      //       </Routes>
+      //     </div>
+      //   </div>
+      // </BrowserRouter>
+      
+    // </div>
       );
   }
 
