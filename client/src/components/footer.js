@@ -8,11 +8,13 @@ function Footer(props) {
   }
   return (
     <footer className="footer">
-      <div className="footer-container content has-text-centered">
-        <header className="footer_title">Drink Responsibility</header>
+      <div className="footer-bg">
+      <header className="footer-title">Drink Responsibility</header>
+      <div className="footer-container">
+        {/* <header className="footer-title">Drink Responsibility</header><br/> */}
         <p className="contact">
-          <strong></strong> - a React site by <br/>
-          {" "}
+          <strong className="footer-links"> A React site by </strong><br/>
+          {" "}<br/>
           <a className="footer-links" href="https://www.linkedin.com/in/drusti-patel-a3507a19a/" target="_blank" rel="noreferrer">
           Drusti Patel,
           <hr />
@@ -34,6 +36,8 @@ function Footer(props) {
           </a>{" "}
         </p>
         <input className="logout" type="button" onClick={handleLogout} value="Logout" />
+      </div>
+      {/* <input className="logout" type="button" onClick={handleLogout} value="Logout" /> */}
       </div>
     </footer>
   );

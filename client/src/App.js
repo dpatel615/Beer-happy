@@ -81,12 +81,15 @@ const client = new ApolloClient({
             <NavLink exact activeClassName="active" to="/">Home</NavLink>
             <NavLink activeClassName="active" to="/Login">Login</NavLink><small></small>
             <NavLink activeClassName="active" to="/Dashboard">Dashboard</NavLink><small></small>
+            <NavLink activeClassName="active" to="/Profile">Profile</NavLink><small></small>
+            
           </div>
           <div className="content">
             <Routes>
               <Route exact path="/" element={<Home/>} />
               <Route path="/Login" element={<Login/>} />
               <Route path="/Dashboard" element={<Dashboard/>} />
+              <Route path="/Profile" element={<Profile/>} />
             </Routes>
           </div>
         </div>
