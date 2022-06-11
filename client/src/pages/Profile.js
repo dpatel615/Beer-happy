@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 
@@ -39,7 +39,13 @@ const Profile = (props) => {
       password: '',
     });
   };
-  return
+  return(
+    <div className="profile">
+      <div className="profile-container">
+        <Router></Router>
+      </div>
+    </div>
+  )
 }
 
 export default Profile;
