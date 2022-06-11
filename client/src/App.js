@@ -11,6 +11,10 @@ import {
 import { setContext } from '@apollo/client/link/context';
 // import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+import Search from './components/search';
+
+
+
 //IMPORT PAGES NEXT
 import Home from './pages/Home';
 import Signup from './pages/Signup';
@@ -19,6 +23,8 @@ import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
 import Header from './components/header';
 import Footer from './components/footer';
+
+
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -46,8 +52,28 @@ const client = new ApolloClient({
     cache: new InMemoryCache(),
   });
 
+
+  
   function App() {
+  //   const [myOptions, setMyOptions] = useState([])
+  
+  // const getDataFromAPI = () => {
+  //   console.log("Options Fetched from API")
+  
+  //   fetch('http://dummy.restapiexample.com/api/v1/employees').then((response) => {
+  //     return response.json()
+  //   }).then((res) => {
+  //     console.log(res.data)
+  //     for (var i = 0; i < res.data.length; i++) {
+  //       myOptions.push(res.data[i].employee_name)
+  //     }
+  //     setMyOptions(myOptions)
+  //   })
+  // }
       return (
+       
+      
+
         <div className="App">
       <BrowserRouter>
         <div>
@@ -65,7 +91,12 @@ const client = new ApolloClient({
           </div>
         </div>
       </BrowserRouter>
+      <Search/>
+      
+    
+         
     </div>
+
       );
   }
 
