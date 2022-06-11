@@ -90,6 +90,47 @@ font-weight: bold;
 width: 64px;
 }
 
+.dashContain{
+  display: flex;
+
+}
+.dashimg{
+position: relative;
+max-width: 25rem;
+max-height: 25rem;
+}
+
+.footer{ 
+  padding-top: 2rem;
+  position: fixed;
+  left:0;
+  bottom: 0;
+  align-items: center;
+}
+.footer_container{ 
+  row-gap: 3.5rem;
+  align-items: center;
+}
+.footer_title{ 
+  margin-bottom: 0 25;
+  font-size: 1.5rem;
+  align-items: center;;
+}
+
+.footer_links{ 
+  display: flex; 
+  flex-direction: row;
+  row-gap: 1.5rem;
+}
+.contact {
+display: flex; 
+flex-direction: row;
+}
+
+.logout{
+  display: flex;
+  flex-direction: row;
+}
 
 /* #search > input[type="text"] {
   border: none;

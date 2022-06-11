@@ -79,14 +79,14 @@ const client = new ApolloClient({
         <div>
           <div className="header">
             <NavLink exact activeClassName="active" to="/">Home</NavLink>
-            <NavLink activeClassName="active" to="/login">Login</NavLink><small></small>
-            <NavLink activeClassName="active" to="/dashboard">Dashboard</NavLink><small></small>
+            <NavLink activeClassName="active" to="/Login">Login</NavLink><small></small>
+            <NavLink activeClassName="active" to="/Dashboard">Dashboard</NavLink><small></small>
           </div>
           <div className="content">
             <Routes>
               <Route exact path="/" element={<Home/>} />
-              <Route path="/login" component={Login} />
-              <Route path="/dashboard" component={Dashboard} />
+              <Route path="/Login" element={<Login/>} />
+              <Route path="/Dashboard" element={<Dashboard/>} />
             </Routes>
           </div>
         </div>
@@ -94,7 +94,7 @@ const client = new ApolloClient({
       <Search/>
       
     
-         
+     <Footer className='footer' />   
     </div>
 
       );
