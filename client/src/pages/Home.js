@@ -1,5 +1,5 @@
 import React from 'react';
-const quotes = require('./quotes.json');
+// const quotes = require('./quotes.json');
 function Home() {
 
   return (
@@ -7,7 +7,7 @@ function Home() {
       Welcome to the Beer Happy!
      
     
-    <h5> Quotes: <span className="auto-type"></span> </h5>
+    {/* <h5> Quotes: <span className="auto-type"></span> </h5> */}
 
     </div>
 

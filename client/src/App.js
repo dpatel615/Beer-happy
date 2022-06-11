@@ -10,6 +10,8 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 // import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+const axios = require("axios");
+require('dotenv').config();
 
 //IMPORT PAGES NEXT
 import Home from './pages/Home';
@@ -19,6 +21,25 @@ import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
 import Header from './components/header';
 import Footer from './components/footer';
+const MY_KEY = '84afef0d27msh95902cd8aa80a21p1e269djsne3dc68e1ef89';
+console.log(process.env);
+
+//Connect to our API 
+const options = {
+  method: 'GET',
+  url: 'https://the-cocktail-db.p.rapidapi.com/filter.php',
+  headers: {
+    'X-RapidAPI-Key': '84afef0d27msh95902cd8aa80a21p1e269djsne3dc68e1ef89',
+    'X-RapidAPI-Host': 'the-cocktail-db.p.rapidapi.com'
+  }
+};
+
+axios.request(options).then(function (response) {
+	console.log(response.data);
+}).catch(function (error) {
+  // console.log(process.env.API_KEY);
+	console.error(error);
+});
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
