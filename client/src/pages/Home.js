@@ -2,6 +2,7 @@ import React from 'react';
 //const quotes = require('./quotes.json');
 var backgroundImage = require('../Assets/image.png');
 
+
 function Home() {
 
   return (
@@ -50,6 +51,6 @@ function Home() {
 //   }
 // };
  
-//  change();
+// change();
 
 export default Home;
