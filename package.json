@@ -17,6 +17,8 @@
     "concurrently": "^5.1.0"
   },
   "dependencies": {
-    "axios": "^0.27.2"
+    "@apollo/client": "^3.6.8",
+    "axios": "^0.27.2",
+    "react-apollo-hooks": "^0.5.0"
   }
 }

@@ -3,12 +3,12 @@ import React from 'react';
 import '../index.css';
 import Axios from "axios";
 import { useState } from "react";
-import strdrinks from './strdrinks';
+import DrinksBox from './strdrinks';
 
 
 function SearchBar() {
 
-  const [query, setquery] = useState("")
+ // const [query, setquery] = useState("")
   const [drinks, setdrinks] = useState([])
   const filterCategory = {
     method: 'GET',
@@ -19,20 +19,22 @@ function SearchBar() {
       'X-RapidAPI-Host': 'the-cocktail-db.p.rapidapi.com'
     }
   };
-   const drinkstr = [0];
-   const isArray = Object.prototype.toString.call(drinkstr) === '[object Array]';
+ // const drinkstr = [0];
+   //const isArray = Object.prototype.toString.call(drinkstr) === '[object Array]';
+  const drinkSearch = (event) => {
+    event.preventDefault();
   Axios.request(filterCategory).then(function (response) {
     // console.log(drinks);
-    console.log(response.data.drinks[0]);
-    // setdrinks(response.data.drinks);
+    console.log(response.data.drinks);
+     setdrinks(response.data.drinks);
     //console.log(drinks);
-    console.log(isArray) ;
+    
   }).catch(function (error) {
     console.error(error);
-    setdrinks(filterCategory.data.drinks);
-    filterCategory();
+   
+   // filterCategory();
   });
-
+}
 
   return (
     <div id="search">
@@ -44,18 +46,19 @@ function SearchBar() {
           type="text"
           id="header-search"
           placeholder="Cocktail name"
-          value={query}
+         // value={query}
           name="s"
-          onChange={(e) => setquery(e.target.value)}
+        //  onChange={(e) => setquery(e.target.value)}
         />
-        <button type="submit">Search</button>
+        <button onClick={drinkSearch}>Search</button>
       </form>
       <div>
+        
         {drinks.map((drinks) => {
-          return <strdrinks drinks={drinks}/>
+          return <DrinksBox key={drinks} drinks={drinks}/>
         })}
          {/* <p>{drinks.strDrink[0]}</p> */}
-
+         {/* drinks[0].strDrink; */}
       </div>
     </div>
   )
