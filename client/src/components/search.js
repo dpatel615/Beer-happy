@@ -16,10 +16,28 @@ const SearchBar = () => (
             name="s" 
         />
         <button type="submit">Search</button>
+        <label for="drink-categories">
+            <select name="drink-categories" id="drink-categories">
+                <option value="ordinary-drink">Ordinary Drinks</option>
+                <option value="cocktail">Cocktail</option>
+                <option value="shake">Shake</option>
+                <option value="other">Other</option>
+                <option value="cocoa">Contains Alcohol</option>
+                <option value="shot">Contains Alcohol</option>
+                <option value="coffee-tea">Contains Alcohol</option>
+                <option value="homemade-liquer">Contains Alcohol</option>
+                <option value="punch-party-drink">Contains Alcohol</option>
+                <option value="contains-alcohol">Contains Alcohol</option>
+                <option value="contains-alcohol">Contains Alcohol</option>
+
+            </select>
+        </label>
         <label for="alcoholic">
-            <input id="alcoholic" type="radio" name="drink-catergories">
-                Alcoholic
-            </input>
+            <select name="alcoholic" id="alcoholic">
+                <option value="contains-alcohol">Contains Alcohol</option>
+                <option value="contains-alcohol">Contains Alcohol</option>
+                
+            </select>
         </label>
         <label for="glass">
             <input id="glass" type="radio" name="drink-categories">
