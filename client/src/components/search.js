@@ -16,6 +16,16 @@ const SearchBar = () => (
             name="s" 
         />
         <button type="submit">Search</button>
+        <label for="alcoholic">
+            <input id="alcoholic" type="radio" name="drink-catergories">
+                Alcoholic
+            </input>
+        </label>
+        <label for="glass">
+            <input id="glass" type="radio" name="drink-categories">
+                Filter By Glass
+            </input>
+        </label>
     </form>
     </div>
 );

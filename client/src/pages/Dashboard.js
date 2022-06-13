@@ -7,7 +7,21 @@ function Dashboard(props) {
   // useEffect(()=> {
 
   // })
-
+  const options = {
+    method: 'GET',
+    url: 'https://the-cocktail-db.p.rapidapi.com/filter.php',
+    params: {i: '', a: '', c:''},//a: alcohol, c: category, i: 'Dry_Vermouth,Gin,Anis'}
+    headers: {
+      'X-RapidAPI-Key': '84afef0d27msh95902cd8aa80a21p1e269djsne3dc68e1ef89',
+      'X-RapidAPI-Host': 'the-cocktail-db.p.rapidapi.com'
+    }
+  };
+  
+  axios.request(options).then(function (response) {
+    console.log(response.data);
+  }).catch(function (error) {
+    console.error(error);
+  });
   // handle click event of logout button
   const handleLogout = () => {
     removeUserSession();
