@@ -19,7 +19,7 @@ function SearchBar() {
           name="s"
         //  onChange={(e) => setquery(e.target.value)}
         />
-        <button type="submit">Search</button>
+        <button type="submit" id="submit">Search</button>
         <label for="drink-categories">
             <select name="drink-categories" id="drink-categories">
                 <option value="ordinary-drink">Ordinary Drinks</option>

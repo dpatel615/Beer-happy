@@ -54,7 +54,7 @@ const client = new ApolloClient({
        
        
         <div className="App">
-      <BrowserRouter>
+      <Router>
         <div>
           <div className="header">
             <NavLink exact activeClassName="active" to="/">Home</NavLink>
@@ -72,7 +72,7 @@ const client = new ApolloClient({
             </Routes>
           </div>
         </div>
-      </BrowserRouter>
+      </Router>
       <Search/>
       
     
