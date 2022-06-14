@@ -1,5 +1,6 @@
 import React from 'react';
 import { getUser, removeUserSession } from '../utils/Common';
+import axios from 'axios';
 
 
 function Dashboard(props) {
@@ -11,7 +12,7 @@ function Dashboard(props) {
   const options = {
     method: 'GET',
     url: 'https://the-cocktail-db.p.rapidapi.com/filter.php',
-    params: {i: },//a: alcohol, c: category, i: 'Dry_Vermouth,Gin,Anis'}
+    params: {i: '', a: '', c:''},//a: alcohol, c: category, i: 'Dry_Vermouth,Gin,Anis'}
     headers: {
       'X-RapidAPI-Key': '84afef0d27msh95902cd8aa80a21p1e269djsne3dc68e1ef89',
       'X-RapidAPI-Host': 'the-cocktail-db.p.rapidapi.com'

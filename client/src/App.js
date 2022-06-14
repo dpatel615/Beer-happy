@@ -9,18 +9,14 @@ import {
 import { setContext } from '@apollo/client/link/context'; 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import Search from './components/search';
-
-
-
 //IMPORT PAGES NEXT
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
-import Header from './components/header';
 import Footer from './components/footer';
+import Search from './components/search';
 
 
 
