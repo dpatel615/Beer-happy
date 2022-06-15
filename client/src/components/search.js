@@ -82,9 +82,7 @@ console.log('');
     </form>
     </div>
   )
-
   
-
 }
-export default SearchBar;
+ export default SearchBar;
 
