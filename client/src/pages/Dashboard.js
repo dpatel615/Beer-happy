@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { getUser, removeUserSession } from '../utils/Common';
+import { removeUserSession } from '../utils/Common';
 import axios from 'axios';
 
 
@@ -9,6 +9,11 @@ function Dashboard(props) {
   
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+    const categories = document.getElementById('drink-categories');
+    const alcoholic = document.getElementById('alcoholic');
+    const glass = document.getElementById('glasses');
+    console.log('dashboard', categories, alcoholic, glass);
+  
     const options = {
       method: 'GET',
       url: 'https://the-cocktail-db.p.rapidapi.com/filter.php',
@@ -23,10 +28,6 @@ function Dashboard(props) {
     }).catch(function (error) {
       console.error(error);
     });
-    const categories = document.getElementById('drink-categories');
-    const alcoholic = document.getElementById('alcoholic');
-    const glass = document.getElementById('glasses');
-  
 
     if(!searchInput) {
       return false;

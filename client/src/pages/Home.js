@@ -16,10 +16,6 @@ function Home() {
         Welcome to Beer Happy!
       </h2>
 
-      <h4 class="quote"> Quotes</h4>
-
-      <div id="quoteChange"></div>
-
     </div>
   )
 };
