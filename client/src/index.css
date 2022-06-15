@@ -214,6 +214,26 @@ background-color: #FF9F1C;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#07A8C3), to(#6EE4E8));
 
  }
+.textarea {
+  width: 50%;
+ border-radius: 5px;
+ margin: 7px 0;
+ border: 1px solid #ccc;
+ padding: 25px 50px; 
+ display: inline-block;
+ box-sizing: border-box;
+} 
+.comments {
+  width: 20%;
+  border: none;
+  color: white;
+  padding: 14px 20px;
+  background-color: #01c9fb;
+  margin: 8px 0;
+  cursor: pointer;
+  border-radius: 4px;
+  
+}
  
 
 /* #search > input[type="text"] {
