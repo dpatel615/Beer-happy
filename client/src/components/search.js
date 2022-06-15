@@ -4,6 +4,7 @@ import '../index.css';
 
 function SearchBar() {
 
+console.log('');
   return (
     <div id="search">
       <form action="/" method="get">
