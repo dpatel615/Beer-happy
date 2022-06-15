@@ -1,19 +1,13 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
-import PrivateRoute from './utils/PrivateRoute';
-import PublicRoute from './utils/PublicRoute';
+import { NavLink } from 'react-router-dom';
 import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
   createHttpLink,
 } from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-import Search from './components/search';
-
-
+import { setContext } from '@apollo/client/link/context'; 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 //IMPORT PAGES NEXT
 import Home from './pages/Home';
@@ -21,8 +15,8 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
-import Header from './components/header';
 import Footer from './components/footer';
+import Search from './components/search';
 
 
 
@@ -60,7 +54,7 @@ const client = new ApolloClient({
        
        
         <div className="App">
-      <BrowserRouter>
+      <Router>
         <div>
           <div className="header">
             <NavLink exact activeClassName="active" to="/">Home</NavLink>
@@ -78,7 +72,7 @@ const client = new ApolloClient({
             </Routes>
           </div>
         </div>
-      </BrowserRouter>
+      </Router>
       <Search/>
       
     

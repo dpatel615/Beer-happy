@@ -12,6 +12,9 @@ type Drink {
     _id: ID
     name: String
     isAlcoholic: Boolean
+    glassType: String
+    instructions: String
+    ingredients: String
     comments: [Comment]!
 }
 
