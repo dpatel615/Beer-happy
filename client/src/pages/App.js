@@ -15,7 +15,10 @@ function App() {
         .then(response => console.log(response))
         .catch(err => console.error(err));
         userData = [];
+      }catch(err) {
+        console.error(err);
       }
+
       setAllUsers(userData.results);
       setUsers(userData.results);
     })();
