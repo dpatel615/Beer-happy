@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { getUser, removeUserSession } from '../utils/Common';
+import { removeUserSession } from '../utils/Common';
 import axios from 'axios';
 
 
